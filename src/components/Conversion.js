@@ -5,7 +5,7 @@ function Conversion(props) {
   return (
     <div>
         <h1>{props.text}</h1>
-        <Form value={props.text} />
+        <Form value={props.value} />
     </div>
   )
 }
