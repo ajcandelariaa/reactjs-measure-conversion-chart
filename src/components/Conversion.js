@@ -1,12 +1,13 @@
 import React from 'react'
+import { Wrapper } from '../styles/Wrapper.styled'
 import Form from './Form'
 
 function Conversion(props) {
   return (
-    <div>
-        <h1>{props.text}</h1>
+    <Wrapper>
+        <p className='conversion-title'>{props.text}</p>
         <Form value={props.value} />
-    </div>
+    </Wrapper>
   )
 }
 

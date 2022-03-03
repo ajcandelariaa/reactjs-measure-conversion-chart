@@ -1,10 +1,11 @@
 import React from 'react'
+import { AnswerBackground } from '../styles/AnswerBackground.styled'
 
 function Answer(props) {
   return (
-    <div>
-        <h3>Answer: {props.answer}</h3>
-    </div>
+    <AnswerBackground>
+        <p>Answer: {props.answer}</p>
+    </AnswerBackground>
   )
 }
 

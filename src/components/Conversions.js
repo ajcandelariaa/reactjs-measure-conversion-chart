@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { Buttons } from "../styles/Buttons.styled";
 import Conversion from "./Conversion";
 
 function Conversions() {
@@ -24,13 +25,13 @@ function Conversions() {
 
   return (
     <div>
-      <div>
-        <button onClick={metricConversion}>Metric Conversion</button>
-        <button onClick={imperialConversion}>Imperial Conversion</button>
-        <button onClick={metricToImperialConversion}>Metric to Imperial</button>
-        <button onClick={imperialToMetricConversion}>Imperial to Metric</button>
-      </div>
-      <div>
+      <Buttons>
+        <button className={ (conVal === 1) ? 'btn-active' : '' } onClick={metricConversion}>Metric Conversion</button>
+        <button className={ (conVal === 2) ? 'btn-active' : '' } onClick={imperialConversion}>Imperial Conversion</button>
+        <button className={ (conVal === 3) ? 'btn-active' : '' } onClick={metricToImperialConversion}>Metric to Imperial</button>
+        <button className={ (conVal === 4) ? 'btn-active' : '' } onClick={imperialToMetricConversion}>Imperial to Metric</button>
+      </Buttons>
+      <div className="bg-conversion">
           <Conversion text={conversion} value={conVal} />
       </div>
     </div>

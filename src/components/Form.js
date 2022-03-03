@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { Inputs } from "../styles/Inputs.styled";
 import Answer from "./Answer";
 
 function Form(props) {
@@ -359,7 +360,7 @@ function Form(props) {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input type="number" ref={firstInput} min="1" required />
+        <Inputs>
         {props.value === 1 ? (
           <>
             <select ref={metric1}>
@@ -369,6 +370,7 @@ function Form(props) {
               <option value="km">Kilometre (km)</option>
               <option value="m">Meter (m)</option>
             </select>
+            <input type="number" ref={firstInput} min="1" required />
             <select ref={metric2}>
               <option value="cm">Centimeter (cm)</option>
               <option value="dm">Decimetre (dm)</option>
@@ -387,6 +389,7 @@ function Form(props) {
               <option value="fur">Furlong (fur)</option>
               <option value="mi">Mile (mi)</option>
             </select>
+            <input type="number" ref={firstInput} min="1" required />
             <select ref={metric2}>
               <option value="ft">Feet (ft)</option>
               <option value="in">Inches (in)</option>
@@ -408,7 +411,7 @@ function Form(props) {
               <option value="yd">Yard (yd)</option>
               <option value="mi">Mile (mi)</option>
             </select>
-
+            <input type="number" ref={firstInput} min="1" required />
             <select ref={metric2}>
               <option value="m">Meter (m)</option>
               <option value="in">Inches (in)</option>
@@ -432,6 +435,7 @@ function Form(props) {
               <option value="mm">Millimetre (mm)</option>
               <option value="km">Kilometre (km)</option>
             </select>
+            <input type="number" ref={firstInput} min="1" required />
             <select ref={metric2}>
               <option value="mm">Millimetre (mm)</option>
               <option value="cm">Centimeter (cm)</option>
@@ -444,9 +448,10 @@ function Form(props) {
             </select>
           </>
         )}
-
-        <br />
-        <button>Calculate</button>
+        </Inputs>
+        <div className="btn-calculate">
+          <button>Calculate</button>
+        </div>
       </form>
 
       {finalAnswer && <Answer answer={finalAnswer}  />}
